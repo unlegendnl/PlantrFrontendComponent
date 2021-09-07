@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  plantrfrontend:
+    image: unlegendnl/plantrfrontend #assumes ci/cd successfull build and push to docker hub
+    ports:
+      - "80:80"
