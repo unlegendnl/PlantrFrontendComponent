@@ -39,7 +39,7 @@ jobs:
        run: npm test --watch=false --browsers=ChromeHeadless
 
 
-  build:
+  buildAndPush:
     runs-on: ubuntu-latest
     permissions:
       contents: read
