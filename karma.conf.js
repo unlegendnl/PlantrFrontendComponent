@@ -40,8 +40,11 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     customLaunchers:{
       Headless:{
-        base: 'ChromeHeadlessCustom',
-        flags: ['--no-sandbox', '--diable-setuid-sandbox', '--disable-gpu']
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox',
+          '--diable-setuid-sandbox'
+        ]
       }
     },
     singleRun: false,
