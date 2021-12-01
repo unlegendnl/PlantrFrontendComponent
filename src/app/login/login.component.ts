@@ -25,11 +25,12 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.authService.test();
   }
 
   onSubmit() {
     console.log("attempting login with credentials " + this._currentUser.userName);
-
+    this._currentUser.email = "string";
 
     this.authService.login(this._currentUser).subscribe((result: JwtTokenModel) => {
       console.log(result);

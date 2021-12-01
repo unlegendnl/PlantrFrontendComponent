@@ -14,6 +14,13 @@ export class AuthService {
   constructor(private http: HttpClient) { }
   token: any;
 
+  public test(){
+    var bla = this.http.get(environment.link + '/api/Authentication/',{observe: 'response'}).subscribe(res => {
+      console.log(res.body);
+      console.log("done...");
+    });
+  }
+
   login(userModel: Usermodel) {
     console.log('Attempting to connect.');
     this.token = this.http.post(environment.link + 'api/login', userModel, {observe: 'response'});

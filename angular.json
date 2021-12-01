@@ -69,6 +69,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "headers": {
+              "Acces-Control-Allow-Origin": "*",
+              "Acces-Control-Allow-Methods": "*",
+              "Access-Control-Allow-Headers": "*"
+            },
             "browserTarget": "plantrfrontend:build"
           },
           "configurations": {
