@@ -36,14 +36,14 @@ export class LoginComponent implements OnInit {
       console.log(result);
 
       const helper = new JwtHelperService();
-      var tokenString = JSON.stringify(result.token);
-      localStorage.setItem('Token', tokenString);
+      var tokenString = JSON.stringify(result)
+      localStorage.setItem('Token', JSON.stringify(result));
       var decoded = helper.decodeToken(tokenString);
       console.log(decoded);
 
-      this._currentUserFromJWT.userName = decoded.userName;
+      //this._currentUserFromJWT.userName = decoded.userName;
 
-      localStorage.setItem('user', JSON.stringify(this._currentUserFromJWT));
+      //localStorage.setItem('user', JSON.stringify(this._currentUserFromJWT));
 
       this.router.navigate(['dashboard']);
     }, (error: any) => {

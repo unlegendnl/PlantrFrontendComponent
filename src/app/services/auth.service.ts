@@ -15,7 +15,7 @@ export class AuthService {
   token: any;
 
   public test(){
-    var bla = this.http.get(environment.link + '/api/Authentication/',{observe: 'response'}).subscribe(res => {
+    var bla = this.http.get(environment.link + 'Authentication',{observe: 'response'}).subscribe(res => {
       console.log(res.body);
       console.log("done...");
     });
@@ -23,7 +23,7 @@ export class AuthService {
 
   login(userModel: Usermodel) {
     console.log('Attempting to connect.');
-    this.token = this.http.post(environment.link + 'api/login', userModel, {observe: 'response'});
+    this.token = this.http.post(environment.link + 'login', userModel, {observe: 'response'});
     console.log(this.token);
     return this.token;
   }
@@ -31,6 +31,6 @@ export class AuthService {
 
   register(userModel: Usermodel) {
     console.log('Attempting to connect.');
-    return this.http.post(environment.link + 'api/User', userModel);
+    return this.http.post(environment.link + 'Authentication', userModel);
   }
 }
